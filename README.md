@@ -26,3 +26,24 @@ DOWNLOADER_MIDDLEWARES = {
         }
 ```
 The retry middleware will operate the exactly as before, however, the ScrapeOps retry middleware will log every request, response and exception your spiders generate.
+
+## Deploy via shub
+Follow these instructions to deploy your spiders using shub:
+
+1. Get shub, either by downloading or pip install:
+```sh
+$ pip install shub
+```
+
+2. Login with shub providing your API key (you can find it here):
+```sh
+$ shub login
+```
+API key: <YOUR_API_KEY>
+
+
+3. Get into your local Scrapy project folder and deploy it to Scrapy Cloud:
+```sh
+$ shub deploy <YOUR_PROJECT_ID>
+```
+You can find the project ID in your project's URL.
