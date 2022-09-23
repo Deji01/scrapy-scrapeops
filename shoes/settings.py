@@ -1,3 +1,7 @@
+import os
+
+
+import os
 # Scrapy settings for shoes project
 #
 # For simplicity, this file contains only settings considered important or
@@ -53,13 +57,18 @@ ROBOTSTXT_OBEY = True
 #DOWNLOADER_MIDDLEWARES = {
 #    'shoes.middlewares.ShoesDownloaderMiddleware': 543,
 #}
-
+DOWNLOADER_MIDDLEWARES = {
+        'scrapeops_scrapy.middleware.retry.RetryMiddleware': 550,
+        'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
+        }
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
 #EXTENSIONS = {
 #    'scrapy.extensions.telnet.TelnetConsole': None,
 #}
-
+EXTENSIONS = {
+        'scrapeops_scrapy.extension.ScrapeOpsMonitor': 500, 
+        }
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
@@ -89,3 +98,5 @@ ITEM_PIPELINES = {
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 FEED_EXPORT_ENCODING = 'utf-8'
+
+SCRAPEOPS_API_KEY= os.getenv("SCRAPEOPS_API_KEY")
