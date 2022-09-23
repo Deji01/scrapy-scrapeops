@@ -1,6 +1,6 @@
 import scrapy
 from ..items import ShoesItem
-from scrapy.loader import ItemLoader
+from itemloaders import ItemLoader
 
 
 class SolesupplierSpider(scrapy.Spider):
