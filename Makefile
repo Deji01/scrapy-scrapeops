@@ -3,4 +3,4 @@ install:
 		pip install -r requirements.txt
 
 scrape:
-	chmod +x scrape.sh && scrape.sh
+	chmod +x ./scrape.sh && ./scrape.sh
