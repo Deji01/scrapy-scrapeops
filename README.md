@@ -38,9 +38,9 @@ $ pip install shub
 2. Login with shub providing your API key (you can find it here):
 ```sh
 $ shub login
-```
-API key: <YOUR_API_KEY>
 
+API key: <YOUR_API_KEY>
+```
 
 3. Get into your local Scrapy project folder and deploy it to Scrapy Cloud:
 ```sh
