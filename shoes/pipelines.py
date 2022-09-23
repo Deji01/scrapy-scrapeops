@@ -5,8 +5,7 @@
 
 
 # useful for handling different item types with a single interface
-from shoes.config import db_host, db_name, db_password, db_port, db_user
-from itemadapter import ItemAdapter
+from shoes.config import db_host, db_name, db_password, db_user
 import psycopg2
 import sys
 
@@ -59,7 +58,7 @@ class SaveToPostgreSQLPipeline(object):
                 price NUMERIC(10, 2), 
                 brand VARCHAR(20), 
                 model VARCHAR(20),  
-                image_url VARCHAR(255) NOT NULL PRIMARY KEY
+                image_url VARCHAR(255)
             )
             """
         )
@@ -83,7 +82,7 @@ class SaveToPostgreSQLPipeline(object):
             item.get("price"),
             item.get("brand"),
             item.get("model"),
-            item.get("image_url"),
+            item.get("image_url")
         )
         try:
             self.curr.execute(query, value)
@@ -94,6 +93,6 @@ class SaveToPostgreSQLPipeline(object):
         self.connection.commit()
 
     def close_spider(self, spider):
-            
+
         self.curr.close()
         self.connection.close()
