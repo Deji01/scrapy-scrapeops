@@ -5,7 +5,7 @@
 
 
 # useful for handling different item types with a single interface
-from shoes.config import db_host, db_name, db_password, db_user
+from config import db_host, db_name, db_password, db_user
 import psycopg2
 import sys
 

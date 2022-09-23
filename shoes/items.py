@@ -1,7 +1,6 @@
-from itemloaders.processors import MapCompose, TakeFirst
 from w3lib.html import remove_tags
 import scrapy
-
+from scrapy.loader.processors import MapCompose, TakeFirst
 
 def clean_price(value):
     conv_price = float(value.replace("£", "").replace(",", ""))
